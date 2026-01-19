@@ -1,4 +1,10 @@
 #include<vector>
+#include<list>
+#include<stack>
+#include<queue>
+#include<deque>
+#include<set>
+
 #include<iostream>
 using namespace std;
 
@@ -58,4 +64,42 @@ int main(){
 
     v.clear();    //clears vector
     cout<< v.empty() << endl;           //true
+
+
+    list<int> ls;                  //LIST
+
+    stack<int> s;                 //STACK
+    s.push(3);                    //{3}
+    s.push(2);                    //{2,3}
+
+    deque<int> dq;                //DEQUE
+
+    queue<int> q;                //QUEUE
+
+    priority_queue<int> pq;      //PRIORITY_QUEUE (highest priority)
+    pq.push(5);                 //{5}
+    pq.push(2);                 //{5,2}
+    pq.emplace(10);             //{10,5,2}
+    pq.top();                  //10
+    pq.pop();                 //{5,2}
+
+    //for lowest priority
+    priority_queue<int, vector<int>, greater<int>> pq;       //{2,5,10}
+
+    set<int> st;            //SET
+    st.insert(1);           //{1}
+    st.emplace(3);          //{1,3}
+    st.emplace(2);          //{1,2,3}
+    st.erase(2);
+    int count = st.count(1);       //0 if element not there else 1
+    auto it1 = st.find(1);        
+    auto it2 = st.find(3);
+    st.erase(it1, it2);        // {3}  [start,end)
+
+    multiset<int> ms;          //MULTISET
+    ms.insert(1);
+    ms.insert(1);
+    ms.insert(1);              //{1,1,1}
+    ms.erase(1);                 //all 1s are erased
+    ms.erase(ms.find(1));        // 1st 1 is erased
 }
