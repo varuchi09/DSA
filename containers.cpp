@@ -4,6 +4,7 @@
 #include<queue>
 #include<deque>
 #include<set>
+#include<map>
 
 #include<iostream>
 using namespace std;
@@ -84,7 +85,7 @@ int main(){
     pq.pop();                 //{5,2}
 
     //for lowest priority
-    priority_queue<int, vector<int>, greater<int>> pq;       //{2,5,10}
+    priority_queue<int, vector<int>, greater<int>> p;       //{2,5,10}
 
     set<int> st;            //SET
     st.insert(1);           //{1}
@@ -102,4 +103,22 @@ int main(){
     ms.insert(1);              //{1,1,1}
     ms.erase(1);                 //all 1s are erased
     ms.erase(ms.find(1));        // 1st 1 is erased
+
+    map<int, int> m;                       //MAP
+    map<int, pair<int, int>> m1;         //1 key, 2 values
+    map<pair<int, int>, int> m2;         // 2 keys, 1 value
+
+    m[1] = 2;
+    m.insert({3,4});
+    m.emplace(5, 6);
+    m2[{7,8}] = 10;
+
+    for(auto i : m){
+        cout<< i.first << " " << i.second << endl;
+    }
+
+    auto i = m.find(3);
+    cout<< (*i).second << endl;
+
+    cout<< m[1] << endl;          // if key is not prsnt it results to NULL or 0
 }
