@@ -21,11 +21,22 @@ int rev(int n){
     return r_num;
 }
 
+int printDivisors(int x){                    // divisors of a no
+    for(int i = 1; i<=x; i++){
+        if(x % i == 0){
+            cout<< i <<" ";
+        }
+    }
+}
+
 int main(){
     int digit = count(56743);
     cout<< digit <<endl;
     int r_num = rev(289645);
     cout<< r_num <<endl; 
+    printDivisors(48);
     return 0;
 }
+
+
 
