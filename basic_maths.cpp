@@ -25,7 +25,7 @@ int main(){
     int digit = count(56743);
     cout<< digit <<endl;
     int r_num = rev(289645);
-    cout<< r_num <<endl;
+    cout<< r_num <<endl; 
     return 0;
 }
 
