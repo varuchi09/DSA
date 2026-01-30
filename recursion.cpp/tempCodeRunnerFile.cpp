@@ -1,1 +1,0 @@
-cout<< " enter element "<< endl; 
