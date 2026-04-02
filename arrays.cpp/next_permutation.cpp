@@ -24,6 +24,10 @@ int main(){                                     // optimal
     }
     if(indx == -1){
         reverse(arr, arr+n);
+        for(int i : arr){
+            cout<< i <<' ';
+            return 0;
+        }
     }
 
     for(int i = n-1; i>indx; i--){
@@ -32,7 +36,7 @@ int main(){                                     // optimal
             break;
         }
     }
-    sort(arr + indx + 1, arr + n);
+    reverse(arr + indx + 1, arr + n);
 
     for(int i : arr){
         cout<< i <<' ';
